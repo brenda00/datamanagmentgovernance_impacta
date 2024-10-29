@@ -103,8 +103,14 @@ Defina suas credenciais de conexão no arquivo profiles.yml, incluindo account, 
 
 🚀 # **Execução do Projeto**
 
-1) Teste a Conexão:
+0) Caso você queira criar um novo projeto utilize, aqui já criamos e vamos utilizar o netflix_project:
 ``` bash
+dbt init <nome_do_projeto>
+```
+
+1) Teste a Conexão com o banco que foi configurado, aqui estamos utilizando o snowflake:
+``` bash
+cd netflix_project
 dbt debug
 ```
 
