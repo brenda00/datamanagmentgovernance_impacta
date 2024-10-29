@@ -44,6 +44,7 @@ Gold 🏆: Dados prontos para consumo analítico.
     └── logs
     └── netflix_project
         └── netflix_project
+            └──dbt_project.yml
             └── analyses
             └── logs
             └── macros
@@ -76,7 +77,7 @@ Gold 🏆: Dados prontos para consumo analítico.
 
 1) Clone o Repositório:
 ``` bash
-git clone <repo-url>
+git clone <https://github.com/brenda00/datamanagmentgovernance_impacta.git>
 cd dbt-netflix-project
 ```
 2) Configure o Ambiente Virtual:

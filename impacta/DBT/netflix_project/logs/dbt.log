@@ -1,0 +1,1385 @@
+[0m14:22:17.621105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C85A0ED480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C85C876D10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C85C877700>]}
+
+
+============================== 14:22:17.628128 | 5d544f6e-5ba5-43b6-be27-2400307f4cdf ==============================
+[0m14:22:17.628128 [info ] [MainThread]: Running with dbt=1.8.7
+[0m14:22:17.630126 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\brend\\Downloads\\impacta\\DBT\\netflix_project\\logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\brend\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt debug', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:22:17.666372 [info ] [MainThread]: dbt version: 1.8.7
+[0m14:22:17.667372 [info ] [MainThread]: python version: 3.10.1
+[0m14:22:17.668372 [info ] [MainThread]: python path: C:\Users\brend\AppData\Local\Programs\Python\Python310\python.exe
+[0m14:22:17.669372 [info ] [MainThread]: os info: Windows-10-10.0.22631-SP0
+[0m14:22:19.063946 [info ] [MainThread]: Using profiles dir at C:\Users\brend\.dbt
+[0m14:22:19.064949 [info ] [MainThread]: Using profiles.yml file at C:\Users\brend\.dbt\profiles.yml
+[0m14:22:19.065955 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\brend\Downloads\impacta\DBT\netflix_project\dbt_project.yml
+[0m14:22:19.068954 [info ] [MainThread]: adapter type: snowflake
+[0m14:22:19.069955 [info ] [MainThread]: adapter version: 1.8.4
+[0m14:22:19.186640 [info ] [MainThread]: Configuration:
+[0m14:22:19.187646 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:22:19.188647 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:22:19.189642 [info ] [MainThread]: Required dependencies:
+[0m14:22:19.190649 [debug] [MainThread]: Executing "git --help"
+[0m14:22:19.237660 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone             Clone a repository into a new directory\n   init              Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add               Add file contents to the index\n   mv                Move or rename a file, a directory, or a symlink\n   restore           Restore working tree files\n   rm                Remove files from the working tree and from the index\n   sparse-checkout   Initialize and modify the sparse-checkout\n\nexamine the history and state (see also: git help revisions)\n   bisect            Use binary search to find the commit that introduced a bug\n   diff              Show changes between commits, commit and working tree, etc\n   grep              Print lines matching a pattern\n   log               Show commit logs\n   show              Show various types of objects\n   status            Show the working tree status\n\ngrow, mark and tweak your common history\n   branch            List, create, or delete branches\n   commit            Record changes to the repository\n   merge             Join two or more development histories together\n   rebase            Reapply commits on top of another base tip\n   reset             Reset current HEAD to the specified state\n   switch            Switch branches\n   tag               Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch             Download objects and refs from another repository\n   pull              Fetch from and integrate with another repository or a local branch\n   push              Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:22:19.238667 [debug] [MainThread]: STDERR: "b''"
+[0m14:22:19.239665 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:22:19.240665 [info ] [MainThread]: Connection:
+[0m14:22:19.242169 [info ] [MainThread]:   account: sc79849.us-east4.gcp
+[0m14:22:19.243178 [info ] [MainThread]:   user: DBT_DMG
+[0m14:22:19.244177 [info ] [MainThread]:   database: NETFLIX
+[0m14:22:19.244177 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m14:22:19.245176 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m14:22:19.246180 [info ] [MainThread]:   schema: public
+[0m14:22:19.247176 [info ] [MainThread]:   authenticator: None
+[0m14:22:19.247176 [info ] [MainThread]:   oauth_client_id: None
+[0m14:22:19.248177 [info ] [MainThread]:   query_tag: None
+[0m14:22:19.249176 [info ] [MainThread]:   client_session_keep_alive: False
+[0m14:22:19.250178 [info ] [MainThread]:   host: None
+[0m14:22:19.251179 [info ] [MainThread]:   port: None
+[0m14:22:19.252181 [info ] [MainThread]:   proxy_host: None
+[0m14:22:19.253180 [info ] [MainThread]:   proxy_port: None
+[0m14:22:19.254183 [info ] [MainThread]:   protocol: None
+[0m14:22:19.255180 [info ] [MainThread]:   connect_retries: 1
+[0m14:22:19.257183 [info ] [MainThread]:   connect_timeout: None
+[0m14:22:19.258182 [info ] [MainThread]:   retry_on_database_errors: False
+[0m14:22:19.259181 [info ] [MainThread]:   retry_all: False
+[0m14:22:19.260183 [info ] [MainThread]:   insecure_mode: False
+[0m14:22:19.261179 [info ] [MainThread]:   reuse_connections: None
+[0m14:22:19.262177 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m14:22:19.263177 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m14:22:19.264177 [debug] [MainThread]: Using snowflake connection "debug"
+[0m14:22:19.265177 [debug] [MainThread]: On debug: select 1 as id
+[0m14:22:19.266177 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:22:20.751938 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.486 seconds
+[0m14:22:20.753937 [debug] [MainThread]: On debug: Close
+[0m14:22:21.064066 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m14:22:21.065072 [info ] [MainThread]: [32mAll checks passed![0m
+[0m14:22:21.067076 [debug] [MainThread]: Command `dbt debug` succeeded at 14:22:21.067076 after 3.66 seconds
+[0m14:22:21.068068 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m14:22:21.068068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C85A0ED480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C85A71BAC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C86D43D630>]}
+[0m14:22:21.069068 [debug] [MainThread]: Flushing usage events
+[0m14:39:15.770734 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228C2D69480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228C5D37A60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228C5D35810>]}
+
+
+============================== 14:39:15.776733 | 1b93a67f-fad8-48e4-ac95-843bb08c7bd1 ==============================
+[0m14:39:15.776733 [info ] [MainThread]: Running with dbt=1.8.7
+[0m14:39:15.777736 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\brend\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'C:\\Users\\brend\\Downloads\\impacta\\DBT\\netflix_project\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m14:39:17.248439 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228C362B340>]}
+[0m14:39:17.318439 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228C5C0C7C0>]}
+[0m14:39:17.320439 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m14:39:17.349958 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m14:39:17.351962 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m14:39:17.352961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D6CAE530>]}
+[0m14:39:20.145508 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m14:39:20.147017 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D7023A90>]}
+[0m14:39:20.443663 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D715A1D0>]}
+[0m14:39:20.629154 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D70CE530>]}
+[0m14:39:20.629154 [info ] [MainThread]: Found 9 models, 5 data tests, 460 macros
+[0m14:39:20.631155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228C3769F60>]}
+[0m14:39:20.633159 [info ] [MainThread]: 
+[0m14:39:20.635161 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m14:39:20.645164 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NETFLIX'
+[0m14:39:20.663291 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX"
+[0m14:39:20.664291 [debug] [ThreadPool]: On list_NETFLIX: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX"} */
+show terse schemas in database NETFLIX
+    limit 10000
+[0m14:39:20.665294 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:39:22.059450 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.395 seconds
+[0m14:39:22.062446 [debug] [ThreadPool]: On list_NETFLIX: Close
+[0m14:39:22.366159 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX"
+[0m14:39:22.367161 [debug] [ThreadPool]: On list_NETFLIX: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX"} */
+show terse schemas in database NETFLIX
+    limit 10000
+[0m14:39:22.368167 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:39:23.449763 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.082 seconds
+[0m14:39:23.452763 [debug] [ThreadPool]: On list_NETFLIX: Close
+[0m14:39:23.763563 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX"
+[0m14:39:23.764568 [debug] [ThreadPool]: On list_NETFLIX: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX"} */
+show terse schemas in database NETFLIX
+    limit 10000
+[0m14:39:23.764568 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:39:24.783452 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.018 seconds
+[0m14:39:24.785452 [debug] [ThreadPool]: On list_NETFLIX: Close
+[0m14:39:25.078330 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_NETFLIX, now create_NETFLIX_SILVER)
+[0m14:39:25.080336 [debug] [ThreadPool]: Creating schema "database: "NETFLIX"
+schema: "SILVER"
+"
+[0m14:39:25.087331 [debug] [ThreadPool]: Using snowflake connection "create_NETFLIX_SILVER"
+[0m14:39:25.088331 [debug] [ThreadPool]: On create_NETFLIX_SILVER: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "create_NETFLIX_SILVER"} */
+create schema if not exists NETFLIX.SILVER
+[0m14:39:25.089336 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:39:26.191226 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.102 seconds
+[0m14:39:26.193227 [debug] [ThreadPool]: On create_NETFLIX_SILVER: Close
+[0m14:39:26.480715 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_NETFLIX_SILVER, now create_NETFLIX_GOLD)
+[0m14:39:26.481716 [debug] [ThreadPool]: Creating schema "database: "NETFLIX"
+schema: "GOLD"
+"
+[0m14:39:26.484715 [debug] [ThreadPool]: Using snowflake connection "create_NETFLIX_GOLD"
+[0m14:39:26.485719 [debug] [ThreadPool]: On create_NETFLIX_GOLD: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "create_NETFLIX_GOLD"} */
+create schema if not exists NETFLIX.GOLD
+[0m14:39:26.486716 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:39:27.523323 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.037 seconds
+[0m14:39:27.525329 [debug] [ThreadPool]: On create_NETFLIX_GOLD: Close
+[0m14:39:27.815732 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_NETFLIX_GOLD, now create_NETFLIX_BRONZE)
+[0m14:39:27.818744 [debug] [ThreadPool]: Creating schema "database: "NETFLIX"
+schema: "BRONZE"
+"
+[0m14:39:27.824733 [debug] [ThreadPool]: Using snowflake connection "create_NETFLIX_BRONZE"
+[0m14:39:27.825746 [debug] [ThreadPool]: On create_NETFLIX_BRONZE: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "create_NETFLIX_BRONZE"} */
+create schema if not exists NETFLIX.BRONZE
+[0m14:39:27.826736 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:39:28.987309 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.161 seconds
+[0m14:39:28.990316 [debug] [ThreadPool]: On create_NETFLIX_BRONZE: Close
+[0m14:39:29.295315 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NETFLIX_SILVER'
+[0m14:39:29.310308 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX_SILVER"
+[0m14:39:29.311302 [debug] [ThreadPool]: On list_NETFLIX_SILVER: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX_SILVER"} */
+show objects in NETFLIX.SILVER limit 10000
+[0m14:39:29.312301 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:39:30.569712 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 1.258 seconds
+[0m14:39:30.573718 [debug] [ThreadPool]: On list_NETFLIX_SILVER: Close
+[0m14:39:30.876068 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_NETFLIX_SILVER, now list_NETFLIX_GOLD)
+[0m14:39:30.880572 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX_GOLD"
+[0m14:39:30.881583 [debug] [ThreadPool]: On list_NETFLIX_GOLD: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX_GOLD"} */
+show objects in NETFLIX.GOLD limit 10000
+[0m14:39:30.882586 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:39:32.205590 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 1.323 seconds
+[0m14:39:32.207585 [debug] [ThreadPool]: On list_NETFLIX_GOLD: Close
+[0m14:39:32.525084 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_NETFLIX_GOLD, now list_NETFLIX_BRONZE)
+[0m14:39:32.531580 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX_BRONZE"
+[0m14:39:32.533593 [debug] [ThreadPool]: On list_NETFLIX_BRONZE: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX_BRONZE"} */
+show objects in NETFLIX.BRONZE limit 10000
+[0m14:39:32.534595 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:39:33.762986 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 1.228 seconds
+[0m14:39:33.769167 [debug] [ThreadPool]: On list_NETFLIX_BRONZE: Close
+[0m14:39:34.267731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228C3774AF0>]}
+[0m14:39:34.269729 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:39:34.272202 [info ] [MainThread]: 
+[0m14:39:34.286740 [debug] [Thread-1 (]: Began running node model.netflix_project.netflix_titles
+[0m14:39:34.289739 [info ] [Thread-1 (]: 1 of 9 START sql table model BRONZE.netflix_titles ............................. [RUN]
+[0m14:39:34.292926 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.netflix_project.netflix_titles'
+[0m14:39:34.294925 [debug] [Thread-1 (]: Began compiling node model.netflix_project.netflix_titles
+[0m14:39:34.317973 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.netflix_titles"
+[0m14:39:34.323534 [debug] [Thread-1 (]: Began executing node model.netflix_project.netflix_titles
+[0m14:39:34.390976 [debug] [Thread-1 (]: Writing runtime sql for node "model.netflix_project.netflix_titles"
+[0m14:39:34.395582 [debug] [Thread-1 (]: Using snowflake connection "model.netflix_project.netflix_titles"
+[0m14:39:34.396602 [debug] [Thread-1 (]: On model.netflix_project.netflix_titles: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "model.netflix_project.netflix_titles"} */
+create or replace transient table NETFLIX.BRONZE.netflix_titles
+         as
+        (-- models/bronze/netflix_titles.sql
+
+SELECT
+  *
+FROM NETFLIX.RAW.NETFLIX_TITLES
+        );
+[0m14:39:34.398601 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:39:37.534108 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 3.135 seconds
+[0m14:39:37.595335 [debug] [Thread-1 (]: On model.netflix_project.netflix_titles: Close
+[0m14:39:37.897846 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D7480310>]}
+[0m14:39:37.899847 [info ] [Thread-1 (]: 1 of 9 OK created sql table model BRONZE.netflix_titles ........................ [[32mSUCCESS 1[0m in 3.60s]
+[0m14:39:37.903172 [debug] [Thread-1 (]: Finished running node model.netflix_project.netflix_titles
+[0m14:39:37.907167 [debug] [Thread-1 (]: Began running node model.netflix_project.atores
+[0m14:39:37.909169 [info ] [Thread-1 (]: 2 of 9 START sql table model SILVER.atores ..................................... [RUN]
+[0m14:39:37.911683 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.netflix_titles, now model.netflix_project.atores)
+[0m14:39:37.913704 [debug] [Thread-1 (]: Began compiling node model.netflix_project.atores
+[0m14:39:37.922260 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.atores"
+[0m14:39:37.926808 [debug] [Thread-1 (]: Began executing node model.netflix_project.atores
+[0m14:39:37.936348 [debug] [Thread-1 (]: Writing runtime sql for node "model.netflix_project.atores"
+[0m14:39:37.941879 [debug] [Thread-1 (]: Using snowflake connection "model.netflix_project.atores"
+[0m14:39:37.942882 [debug] [Thread-1 (]: On model.netflix_project.atores: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "model.netflix_project.atores"} */
+create or replace transient table NETFLIX.SILVER.atores
+         as
+        (-- models/silver/atores.sql
+WITH base AS (
+  SELECT DISTINCT
+    ROW_NUMBER() OVER (ORDER BY TRIM(actor_name)) AS "ID",
+    TRIM(actor_name) AS ACTOR,
+    LISTAGG(filme_title, ', ') WITHIN GROUP (ORDER BY filme_title) AS filmes
+  FROM (
+    SELECT
+        TRIM(actor.value) AS actor_name,  -- Nome correto para o ator
+        title AS filme_title
+    FROM
+        NETFLIX.BRONZE.netflix_titles,
+        LATERAL FLATTEN(input => SPLIT("CAST", ', ')) AS actor  -- Correção do FLATTEN
+    WHERE
+        actor.value IS NOT NULL AND actor.value != ''
+  ) AS flattened_actors
+  GROUP BY TRIM(actor_name)  -- Agrupar pelo nome correto
+)
+SELECT * FROM base
+        );
+[0m14:39:37.943881 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:39:40.163188 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.219 seconds
+[0m14:39:40.167190 [debug] [Thread-1 (]: On model.netflix_project.atores: Close
+[0m14:39:40.534826 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D7481C00>]}
+[0m14:39:40.536824 [info ] [Thread-1 (]: 2 of 9 OK created sql table model SILVER.atores ................................ [[32mSUCCESS 1[0m in 2.62s]
+[0m14:39:40.538827 [debug] [Thread-1 (]: Finished running node model.netflix_project.atores
+[0m14:39:40.539824 [debug] [Thread-1 (]: Began running node model.netflix_project.diretores
+[0m14:39:40.542341 [info ] [Thread-1 (]: 3 of 9 START sql table model SILVER.diretores .................................. [RUN]
+[0m14:39:40.545370 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.atores, now model.netflix_project.diretores)
+[0m14:39:40.546366 [debug] [Thread-1 (]: Began compiling node model.netflix_project.diretores
+[0m14:39:40.555902 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.diretores"
+[0m14:39:40.558896 [debug] [Thread-1 (]: Began executing node model.netflix_project.diretores
+[0m14:39:40.568416 [debug] [Thread-1 (]: Writing runtime sql for node "model.netflix_project.diretores"
+[0m14:39:40.572954 [debug] [Thread-1 (]: Using snowflake connection "model.netflix_project.diretores"
+[0m14:39:40.573951 [debug] [Thread-1 (]: On model.netflix_project.diretores: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "model.netflix_project.diretores"} */
+create or replace transient table NETFLIX.SILVER.diretores
+         as
+        (-- models/silver/diretores.sql
+WITH base AS (
+  SELECT DISTINCT
+    ROW_NUMBER() OVER (ORDER BY "DIRECTOR") AS "ID",
+    "DIRECTOR",
+    LISTAGG("FILME_TITLE", ', ') AS filmes
+  FROM (
+    SELECT
+        TRIM("DIRECTOR") AS "DIRECTOR",
+        "TITLE" AS "FILME_TITLE"
+    FROM
+        NETFLIX.BRONZE.netflix_titles,
+        LATERAL FLATTEN(input => SPLIT("DIRECTOR", ', ')) AS "DIRECTOR"
+    WHERE
+        "DIRECTOR" IS NOT NULL AND "DIRECTOR" != ''
+)
+GROUP BY
+    "DIRECTOR"
+)
+
+SELECT * FROM base
+        );
+[0m14:39:40.575952 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:39:43.761428 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 3.186 seconds
+[0m14:39:43.767375 [debug] [Thread-1 (]: On model.netflix_project.diretores: Close
+[0m14:39:44.064890 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D7480A90>]}
+[0m14:39:44.066899 [info ] [Thread-1 (]: 3 of 9 OK created sql table model SILVER.diretores ............................. [[32mSUCCESS 1[0m in 3.52s]
+[0m14:39:44.069901 [debug] [Thread-1 (]: Finished running node model.netflix_project.diretores
+[0m14:39:44.072451 [debug] [Thread-1 (]: Began running node model.netflix_project.filmes
+[0m14:39:44.075488 [info ] [Thread-1 (]: 4 of 9 START sql table model SILVER.filmes ..................................... [RUN]
+[0m14:39:44.079481 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.diretores, now model.netflix_project.filmes)
+[0m14:39:44.082037 [debug] [Thread-1 (]: Began compiling node model.netflix_project.filmes
+[0m14:39:44.096622 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.filmes"
+[0m14:39:44.099622 [debug] [Thread-1 (]: Began executing node model.netflix_project.filmes
+[0m14:39:44.111689 [debug] [Thread-1 (]: Writing runtime sql for node "model.netflix_project.filmes"
+[0m14:39:44.115722 [debug] [Thread-1 (]: Using snowflake connection "model.netflix_project.filmes"
+[0m14:39:44.116723 [debug] [Thread-1 (]: On model.netflix_project.filmes: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "model.netflix_project.filmes"} */
+create or replace transient table NETFLIX.SILVER.filmes
+         as
+        (-- models/silver/filmes.sql
+WITH base AS (
+  SELECT DISTINCT
+    ROW_NUMBER() OVER (ORDER BY "SHOW_ID") AS "ID",
+    "SHOW_ID",
+    "TITLE",
+	"RELEASE_YEAR",
+	"RATING",
+	"DURATION",
+	TRY_TO_DATE("DATE_ADDED", 'MMMM DD, YYYY') AS "DATE_ADDED",
+    "DESCRIPTION",
+	"COUNTRY",
+	"TYPE",
+	SPLIT("LISTED_IN", '.') AS "LISTED_IN"
+  FROM NETFLIX.BRONZE.netflix_titles
+)
+
+SELECT * FROM base
+        );
+[0m14:39:44.117726 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:39:47.611749 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 3.494 seconds
+[0m14:39:47.615762 [debug] [Thread-1 (]: On model.netflix_project.filmes: Close
+[0m14:39:47.906818 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D6FC2AA0>]}
+[0m14:39:47.909829 [info ] [Thread-1 (]: 4 of 9 OK created sql table model SILVER.filmes ................................ [[32mSUCCESS 1[0m in 3.83s]
+[0m14:39:47.913355 [debug] [Thread-1 (]: Finished running node model.netflix_project.filmes
+[0m14:39:47.915355 [debug] [Thread-1 (]: Began running node model.netflix_project.paises
+[0m14:39:47.917365 [info ] [Thread-1 (]: 5 of 9 START sql table model SILVER.paises ..................................... [RUN]
+[0m14:39:47.919355 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.filmes, now model.netflix_project.paises)
+[0m14:39:47.921359 [debug] [Thread-1 (]: Began compiling node model.netflix_project.paises
+[0m14:39:47.931741 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.paises"
+[0m14:39:47.934757 [debug] [Thread-1 (]: Began executing node model.netflix_project.paises
+[0m14:39:47.945301 [debug] [Thread-1 (]: Writing runtime sql for node "model.netflix_project.paises"
+[0m14:39:47.951304 [debug] [Thread-1 (]: Using snowflake connection "model.netflix_project.paises"
+[0m14:39:47.952829 [debug] [Thread-1 (]: On model.netflix_project.paises: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "model.netflix_project.paises"} */
+create or replace transient table NETFLIX.SILVER.paises
+         as
+        (-- models/silver/paises.sql
+WITH base AS (
+  SELECT DISTINCT
+    ROW_NUMBER() OVER (ORDER BY country_cleaned) AS "ID",
+    country_cleaned AS "COUNTRY"
+  FROM (
+	  SELECT distinct
+			TRIM(SPLIT(country, ', ')[0]) AS country_cleaned
+		FROM
+			NETFLIX.BRONZE.netflix_titles
+		WHERE
+			country IS NOT NULL AND country != ''
+	)
+  WHERE
+		country_cleaned IS NOT NULL AND country_cleaned != ''
+)
+SELECT * FROM base
+        );
+[0m14:39:47.954824 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:39:50.237383 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.283 seconds
+[0m14:39:50.244905 [debug] [Thread-1 (]: On model.netflix_project.paises: Close
+[0m14:39:50.543298 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D6F74D30>]}
+[0m14:39:50.546282 [info ] [Thread-1 (]: 5 of 9 OK created sql table model SILVER.paises ................................ [[32mSUCCESS 1[0m in 2.62s]
+[0m14:39:50.549282 [debug] [Thread-1 (]: Finished running node model.netflix_project.paises
+[0m14:39:50.551282 [debug] [Thread-1 (]: Began running node model.netflix_project.tipos
+[0m14:39:50.553810 [info ] [Thread-1 (]: 6 of 9 START sql table model SILVER.tipos ...................................... [RUN]
+[0m14:39:50.556818 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.paises, now model.netflix_project.tipos)
+[0m14:39:50.558804 [debug] [Thread-1 (]: Began compiling node model.netflix_project.tipos
+[0m14:39:50.570342 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.tipos"
+[0m14:39:50.576872 [debug] [Thread-1 (]: Began executing node model.netflix_project.tipos
+[0m14:39:50.585396 [debug] [Thread-1 (]: Writing runtime sql for node "model.netflix_project.tipos"
+[0m14:39:50.589412 [debug] [Thread-1 (]: Using snowflake connection "model.netflix_project.tipos"
+[0m14:39:50.590415 [debug] [Thread-1 (]: On model.netflix_project.tipos: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "model.netflix_project.tipos"} */
+create or replace transient table NETFLIX.SILVER.tipos
+         as
+        (-- models/silver/tipos.sql
+WITH base AS (
+  SELECT DISTINCT
+    ROW_NUMBER() OVER (ORDER BY "TYPE") AS "ID",
+	"TYPE"
+  FROM NETFLIX.BRONZE.netflix_titles
+  WHERE TYPE IS NOT NULL
+)
+
+SELECT * FROM base
+        );
+[0m14:39:50.591927 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:39:53.263575 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.671 seconds
+[0m14:39:53.269576 [debug] [Thread-1 (]: On model.netflix_project.tipos: Close
+[0m14:39:53.599292 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D6F74190>]}
+[0m14:39:53.601812 [info ] [Thread-1 (]: 6 of 9 OK created sql table model SILVER.tipos ................................. [[32mSUCCESS 1[0m in 3.04s]
+[0m14:39:53.605831 [debug] [Thread-1 (]: Finished running node model.netflix_project.tipos
+[0m14:39:53.607841 [debug] [Thread-1 (]: Began running node model.netflix_project.CAMPANHA_DESENHOS_TERROR
+[0m14:39:53.609836 [info ] [Thread-1 (]: 7 of 9 START sql view model GOLD.CAMPANHA_DESENHOS_TERROR ...................... [RUN]
+[0m14:39:53.612372 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.tipos, now model.netflix_project.CAMPANHA_DESENHOS_TERROR)
+[0m14:39:53.614436 [debug] [Thread-1 (]: Began compiling node model.netflix_project.CAMPANHA_DESENHOS_TERROR
+[0m14:39:53.623992 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.CAMPANHA_DESENHOS_TERROR"
+[0m14:39:53.626975 [debug] [Thread-1 (]: Began executing node model.netflix_project.CAMPANHA_DESENHOS_TERROR
+[0m14:39:53.664655 [debug] [Thread-1 (]: Writing runtime sql for node "model.netflix_project.CAMPANHA_DESENHOS_TERROR"
+[0m14:39:53.671653 [debug] [Thread-1 (]: Using snowflake connection "model.netflix_project.CAMPANHA_DESENHOS_TERROR"
+[0m14:39:53.673933 [debug] [Thread-1 (]: On model.netflix_project.CAMPANHA_DESENHOS_TERROR: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "model.netflix_project.CAMPANHA_DESENHOS_TERROR"} */
+create or replace   view NETFLIX.GOLD.CAMPANHA_DESENHOS_TERROR
+  
+   as (
+    -- models/gold/CAMPANHA_FILMES_TERROR.sql
+WITH base AS (
+  SELECT 
+    f.show_id,
+    f.title,
+    d.director,
+    a.actor,
+    p.country,
+    f.date_added,
+    f.release_year,
+    f.rating,
+    f.duration,
+    f.description,
+    f.listed_in
+FROM
+    NETFLIX.BRONZE.netflix_titles f
+    LEFT JOIN NETFLIX.SILVER.diretores d ON f.title = d.filmes
+    LEFT JOIN NETFLIX.SILVER.atores a ON f.title = a.filmes
+    LEFT JOIN NETFLIX.SILVER.paises p ON f.country = p.country
+WHERE
+    f.type = 'TV Show'
+    AND f.listed_in ILIKE '%Horror%'
+	AND f.listed_in ILIKE '%Anime%'
+)
+
+SELECT * FROM base
+  );
+[0m14:39:53.674923 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:39:55.394803 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.720 seconds
+[0m14:39:55.398799 [debug] [Thread-1 (]: On model.netflix_project.CAMPANHA_DESENHOS_TERROR: Close
+[0m14:39:55.712137 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228C21ABA60>]}
+[0m14:39:55.715148 [info ] [Thread-1 (]: 7 of 9 OK created sql view model GOLD.CAMPANHA_DESENHOS_TERROR ................. [[32mSUCCESS 1[0m in 2.10s]
+[0m14:39:55.718157 [debug] [Thread-1 (]: Finished running node model.netflix_project.CAMPANHA_DESENHOS_TERROR
+[0m14:39:55.720153 [debug] [Thread-1 (]: Began running node model.netflix_project.CAMPANHA_FILMES_TERROR
+[0m14:39:55.722684 [info ] [Thread-1 (]: 8 of 9 START sql view model GOLD.CAMPANHA_FILMES_TERROR ........................ [RUN]
+[0m14:39:55.725715 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.CAMPANHA_DESENHOS_TERROR, now model.netflix_project.CAMPANHA_FILMES_TERROR)
+[0m14:39:55.727727 [debug] [Thread-1 (]: Began compiling node model.netflix_project.CAMPANHA_FILMES_TERROR
+[0m14:39:55.738848 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.CAMPANHA_FILMES_TERROR"
+[0m14:39:55.742390 [debug] [Thread-1 (]: Began executing node model.netflix_project.CAMPANHA_FILMES_TERROR
+[0m14:39:55.750420 [debug] [Thread-1 (]: Writing runtime sql for node "model.netflix_project.CAMPANHA_FILMES_TERROR"
+[0m14:39:55.754823 [debug] [Thread-1 (]: Using snowflake connection "model.netflix_project.CAMPANHA_FILMES_TERROR"
+[0m14:39:55.756834 [debug] [Thread-1 (]: On model.netflix_project.CAMPANHA_FILMES_TERROR: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "model.netflix_project.CAMPANHA_FILMES_TERROR"} */
+create or replace   view NETFLIX.GOLD.CAMPANHA_FILMES_TERROR
+  
+   as (
+    -- models/gold/CAMPANHA_FILMES_TERROR.sql
+WITH base AS (
+  SELECT 
+    f.show_id,
+    f.title,
+    d.director,
+    a.actor,
+    p.country,
+    f.date_added,
+    f.release_year,
+    f.rating,
+    f.duration,
+    f.description,
+    f.listed_in
+FROM
+    NETFLIX.BRONZE.netflix_titles f
+    LEFT JOIN NETFLIX.SILVER.diretores d ON f.title = d.filmes
+    LEFT JOIN NETFLIX.SILVER.atores a ON f.title = a.filmes
+    LEFT JOIN NETFLIX.SILVER.paises p ON f.country = p.country
+WHERE
+    f.type = 'Movie'
+    AND f.listed_in ILIKE '%Horror%'
+)
+
+SELECT * FROM base
+  );
+[0m14:39:55.757833 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:39:57.462302 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.704 seconds
+[0m14:39:57.467313 [debug] [Thread-1 (]: On model.netflix_project.CAMPANHA_FILMES_TERROR: Close
+[0m14:39:57.757302 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D74D48E0>]}
+[0m14:39:57.760303 [info ] [Thread-1 (]: 8 of 9 OK created sql view model GOLD.CAMPANHA_FILMES_TERROR ................... [[32mSUCCESS 1[0m in 2.03s]
+[0m14:39:57.763828 [debug] [Thread-1 (]: Finished running node model.netflix_project.CAMPANHA_FILMES_TERROR
+[0m14:39:57.765831 [debug] [Thread-1 (]: Began running node model.netflix_project.CAMPANHA_SERIES_TERROR
+[0m14:39:57.768837 [info ] [Thread-1 (]: 9 of 9 START sql view model GOLD.CAMPANHA_SERIES_TERROR ........................ [RUN]
+[0m14:39:57.770830 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.CAMPANHA_FILMES_TERROR, now model.netflix_project.CAMPANHA_SERIES_TERROR)
+[0m14:39:57.773221 [debug] [Thread-1 (]: Began compiling node model.netflix_project.CAMPANHA_SERIES_TERROR
+[0m14:39:57.791755 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.CAMPANHA_SERIES_TERROR"
+[0m14:39:57.798723 [debug] [Thread-1 (]: Began executing node model.netflix_project.CAMPANHA_SERIES_TERROR
+[0m14:39:57.810251 [debug] [Thread-1 (]: Writing runtime sql for node "model.netflix_project.CAMPANHA_SERIES_TERROR"
+[0m14:39:57.815779 [debug] [Thread-1 (]: Using snowflake connection "model.netflix_project.CAMPANHA_SERIES_TERROR"
+[0m14:39:57.817787 [debug] [Thread-1 (]: On model.netflix_project.CAMPANHA_SERIES_TERROR: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "model.netflix_project.CAMPANHA_SERIES_TERROR"} */
+create or replace   view NETFLIX.GOLD.CAMPANHA_SERIES_TERROR
+  
+   as (
+    -- models/gold/CAMPANHA_SERIES_TERROR.sql
+WITH base AS (
+  SELECT 
+    f.show_id,
+    f.title,
+    d.director,
+    a.actor,
+    p.country,
+    f.date_added,
+    f.release_year,
+    f.rating,
+    f.duration,
+    f.description,
+    f.listed_in
+FROM
+    NETFLIX.BRONZE.netflix_titles f
+    LEFT JOIN NETFLIX.SILVER.diretores d ON f.title = d.filmes
+    LEFT JOIN NETFLIX.SILVER.atores a ON f.title = a.filmes
+    LEFT JOIN NETFLIX.SILVER.paises p ON f.country = p.country
+WHERE
+    f.type = 'TV Show'
+--    AND ARRAY_TO_STRING(f.listed_in, ',') ILIKE '%Horror%'
+    AND f.listed_in ILIKE '%Horror%'
+)
+
+SELECT * FROM base
+  );
+[0m14:39:57.818788 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:39:59.557995 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.739 seconds
+[0m14:39:59.564523 [debug] [Thread-1 (]: On model.netflix_project.CAMPANHA_SERIES_TERROR: Close
+[0m14:39:59.891720 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b93a67f-fad8-48e4-ac95-843bb08c7bd1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D6ECC700>]}
+[0m14:39:59.893735 [info ] [Thread-1 (]: 9 of 9 OK created sql view model GOLD.CAMPANHA_SERIES_TERROR ................... [[32mSUCCESS 1[0m in 2.12s]
+[0m14:39:59.896731 [debug] [Thread-1 (]: Finished running node model.netflix_project.CAMPANHA_SERIES_TERROR
+[0m14:39:59.899738 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:39:59.902249 [debug] [MainThread]: Connection 'create_NETFLIX_BRONZE' was properly closed.
+[0m14:39:59.903259 [debug] [MainThread]: Connection 'list_NETFLIX_BRONZE' was properly closed.
+[0m14:39:59.905266 [debug] [MainThread]: Connection 'model.netflix_project.CAMPANHA_SERIES_TERROR' was properly closed.
+[0m14:39:59.907280 [info ] [MainThread]: 
+[0m14:39:59.909271 [info ] [MainThread]: Finished running 6 table models, 3 view models in 0 hours 0 minutes and 39.27 seconds (39.27s).
+[0m14:39:59.915812 [debug] [MainThread]: Command end result
+[0m14:40:00.020287 [info ] [MainThread]: 
+[0m14:40:00.023825 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:40:00.024815 [info ] [MainThread]: 
+[0m14:40:00.026827 [info ] [MainThread]: Done. PASS=9 WARN=0 ERROR=0 SKIP=0 TOTAL=9
+[0m14:40:00.029824 [debug] [MainThread]: Command `dbt run` succeeded at 14:40:00.029824 after 44.45 seconds
+[0m14:40:00.030823 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228C2D69480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D6EAA9B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228D70FFC10>]}
+[0m14:40:00.032337 [debug] [MainThread]: Flushing usage events
+[0m14:51:43.415658 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F697455450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F69A427A60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F69A426110>]}
+
+
+============================== 14:51:43.423437 | 5b20283f-efdb-4496-8019-ee7ab390e943 ==============================
+[0m14:51:43.423437 [info ] [MainThread]: Running with dbt=1.8.7
+[0m14:51:43.424433 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\brend\\Downloads\\impacta\\DBT\\netflix_project\\logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\brend\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt test', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:51:44.817854 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5b20283f-efdb-4496-8019-ee7ab390e943', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F6AB24E1D0>]}
+[0m14:51:44.905368 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5b20283f-efdb-4496-8019-ee7ab390e943', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F69A2FC670>]}
+[0m14:51:44.907371 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m14:51:44.923934 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m14:51:45.187360 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:51:45.187868 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:51:45.259114 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5b20283f-efdb-4496-8019-ee7ab390e943', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F6AB6090F0>]}
+[0m14:51:45.457079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5b20283f-efdb-4496-8019-ee7ab390e943', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F6AB61C9A0>]}
+[0m14:51:45.457589 [info ] [MainThread]: Found 9 models, 5 data tests, 460 macros
+[0m14:51:45.458599 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5b20283f-efdb-4496-8019-ee7ab390e943', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F6AB5E9AB0>]}
+[0m14:51:45.461819 [info ] [MainThread]: 
+[0m14:51:45.463826 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m14:51:45.475500 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NETFLIX_SILVER'
+[0m14:51:45.501690 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX_SILVER"
+[0m14:51:45.502690 [debug] [ThreadPool]: On list_NETFLIX_SILVER: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX_SILVER"} */
+show objects in NETFLIX.SILVER limit 10000
+[0m14:51:45.503696 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:51:46.958240 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.455 seconds
+[0m14:51:46.962434 [debug] [ThreadPool]: On list_NETFLIX_SILVER: Close
+[0m14:51:47.254366 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_NETFLIX_SILVER, now list_NETFLIX_GOLD)
+[0m14:51:47.261564 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX_GOLD"
+[0m14:51:47.262566 [debug] [ThreadPool]: On list_NETFLIX_GOLD: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX_GOLD"} */
+show objects in NETFLIX.GOLD limit 10000
+[0m14:51:47.262566 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:51:48.392161 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.129 seconds
+[0m14:51:48.395156 [debug] [ThreadPool]: On list_NETFLIX_GOLD: Close
+[0m14:51:48.685535 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_NETFLIX_GOLD, now list_NETFLIX_BRONZE)
+[0m14:51:48.690098 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX_BRONZE"
+[0m14:51:48.690239 [debug] [ThreadPool]: On list_NETFLIX_BRONZE: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX_BRONZE"} */
+show objects in NETFLIX.BRONZE limit 10000
+[0m14:51:48.691235 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:51:50.148203 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.457 seconds
+[0m14:51:50.153040 [debug] [ThreadPool]: On list_NETFLIX_BRONZE: Close
+[0m14:51:50.453589 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5b20283f-efdb-4496-8019-ee7ab390e943', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F6AB374700>]}
+[0m14:51:50.454594 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:51:50.456598 [info ] [MainThread]: 
+[0m14:51:50.462333 [debug] [Thread-1 (]: Began running node test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5
+[0m14:51:50.463333 [info ] [Thread-1 (]: 1 of 5 START test accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023  [RUN]
+[0m14:51:50.465339 [debug] [Thread-1 (]: Acquiring new snowflake connection 'test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5'
+[0m14:51:50.467341 [debug] [Thread-1 (]: Began compiling node test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5
+[0m14:51:50.510047 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5"
+[0m14:51:50.517571 [debug] [Thread-1 (]: Began executing node test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5
+[0m14:51:50.567849 [debug] [Thread-1 (]: Writing runtime sql for node "test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5"
+[0m14:51:50.571066 [debug] [Thread-1 (]: Using snowflake connection "test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5"
+[0m14:51:50.572062 [debug] [Thread-1 (]: On test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        RELEASE_YEAR as value_field,
+        count(*) as n_records
+
+    from NETFLIX.SILVER.filmes
+    group by RELEASE_YEAR
+
+)
+
+select *
+from all_values
+where value_field not in (
+    '2019','2020','2021','2022','2023'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m14:51:50.574061 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:51:53.233691 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.660 seconds
+[0m14:51:53.250882 [debug] [Thread-1 (]: On test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5: Close
+[0m14:51:53.553237 [error] [Thread-1 (]: 1 of 5 FAIL 71 accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023  [[31mFAIL 71[0m in 3.09s]
+[0m14:51:53.555232 [debug] [Thread-1 (]: Finished running node test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5
+[0m14:51:53.556228 [debug] [Thread-1 (]: Began running node test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109
+[0m14:51:53.558765 [info ] [Thread-1 (]: 2 of 5 START test not_null_filmes_RELEASE_YEAR ................................. [RUN]
+[0m14:51:53.561101 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5, now test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109)
+[0m14:51:53.562102 [debug] [Thread-1 (]: Began compiling node test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109
+[0m14:51:53.582305 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109"
+[0m14:51:53.584315 [debug] [Thread-1 (]: Began executing node test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109
+[0m14:51:53.591963 [debug] [Thread-1 (]: Writing runtime sql for node "test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109"
+[0m14:51:53.595962 [debug] [Thread-1 (]: Using snowflake connection "test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109"
+[0m14:51:53.597475 [debug] [Thread-1 (]: On test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select RELEASE_YEAR
+from NETFLIX.SILVER.filmes
+where RELEASE_YEAR is null
+
+
+
+      
+    ) dbt_internal_test
+[0m14:51:53.599735 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:51:55.127775 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.529 seconds
+[0m14:51:55.131735 [debug] [Thread-1 (]: On test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109: Close
+[0m14:51:55.576640 [info ] [Thread-1 (]: 2 of 5 PASS not_null_filmes_RELEASE_YEAR ....................................... [[32mPASS[0m in 2.02s]
+[0m14:51:55.578943 [debug] [Thread-1 (]: Finished running node test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109
+[0m14:51:55.579940 [debug] [Thread-1 (]: Began running node test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072
+[0m14:51:55.580939 [info ] [Thread-1 (]: 3 of 5 START test not_null_filmes_SHOW_ID ...................................... [RUN]
+[0m14:51:55.582939 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109, now test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072)
+[0m14:51:55.584945 [debug] [Thread-1 (]: Began compiling node test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072
+[0m14:51:55.591474 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072"
+[0m14:51:55.594472 [debug] [Thread-1 (]: Began executing node test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072
+[0m14:51:55.599610 [debug] [Thread-1 (]: Writing runtime sql for node "test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072"
+[0m14:51:55.603642 [debug] [Thread-1 (]: Using snowflake connection "test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072"
+[0m14:51:55.605640 [debug] [Thread-1 (]: On test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select SHOW_ID
+from NETFLIX.SILVER.filmes
+where SHOW_ID is null
+
+
+
+      
+    ) dbt_internal_test
+[0m14:51:55.607636 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:51:57.158276 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.551 seconds
+[0m14:51:57.160286 [debug] [Thread-1 (]: On test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072: Close
+[0m14:51:57.446052 [info ] [Thread-1 (]: 3 of 5 PASS not_null_filmes_SHOW_ID ............................................ [[32mPASS[0m in 1.86s]
+[0m14:51:57.449175 [debug] [Thread-1 (]: Finished running node test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072
+[0m14:51:57.451188 [debug] [Thread-1 (]: Began running node test.netflix_project.not_null_filmes_TITLE.2d61ba99ee
+[0m14:51:57.452185 [info ] [Thread-1 (]: 4 of 5 START test not_null_filmes_TITLE ........................................ [RUN]
+[0m14:51:57.454194 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072, now test.netflix_project.not_null_filmes_TITLE.2d61ba99ee)
+[0m14:51:57.455186 [debug] [Thread-1 (]: Began compiling node test.netflix_project.not_null_filmes_TITLE.2d61ba99ee
+[0m14:51:57.462706 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.not_null_filmes_TITLE.2d61ba99ee"
+[0m14:51:57.465718 [debug] [Thread-1 (]: Began executing node test.netflix_project.not_null_filmes_TITLE.2d61ba99ee
+[0m14:51:57.470239 [debug] [Thread-1 (]: Writing runtime sql for node "test.netflix_project.not_null_filmes_TITLE.2d61ba99ee"
+[0m14:51:57.472238 [debug] [Thread-1 (]: Using snowflake connection "test.netflix_project.not_null_filmes_TITLE.2d61ba99ee"
+[0m14:51:57.473242 [debug] [Thread-1 (]: On test.netflix_project.not_null_filmes_TITLE.2d61ba99ee: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "test.netflix_project.not_null_filmes_TITLE.2d61ba99ee"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select TITLE
+from NETFLIX.SILVER.filmes
+where TITLE is null
+
+
+
+      
+    ) dbt_internal_test
+[0m14:51:57.473242 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:51:59.298666 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.825 seconds
+[0m14:51:59.303661 [debug] [Thread-1 (]: On test.netflix_project.not_null_filmes_TITLE.2d61ba99ee: Close
+[0m14:51:59.601435 [info ] [Thread-1 (]: 4 of 5 PASS not_null_filmes_TITLE .............................................. [[32mPASS[0m in 2.15s]
+[0m14:51:59.604440 [debug] [Thread-1 (]: Finished running node test.netflix_project.not_null_filmes_TITLE.2d61ba99ee
+[0m14:51:59.605440 [debug] [Thread-1 (]: Began running node test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b
+[0m14:51:59.607992 [info ] [Thread-1 (]: 5 of 5 START test unique_filmes_SHOW_ID ........................................ [RUN]
+[0m14:51:59.608958 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.not_null_filmes_TITLE.2d61ba99ee, now test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b)
+[0m14:51:59.609960 [debug] [Thread-1 (]: Began compiling node test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b
+[0m14:51:59.621482 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b"
+[0m14:51:59.623487 [debug] [Thread-1 (]: Began executing node test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b
+[0m14:51:59.628539 [debug] [Thread-1 (]: Writing runtime sql for node "test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b"
+[0m14:51:59.636539 [debug] [Thread-1 (]: Using snowflake connection "test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b"
+[0m14:51:59.638052 [debug] [Thread-1 (]: On test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    SHOW_ID as unique_field,
+    count(*) as n_records
+
+from NETFLIX.SILVER.filmes
+where SHOW_ID is not null
+group by SHOW_ID
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m14:51:59.640071 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:52:01.444587 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.804 seconds
+[0m14:52:01.449726 [debug] [Thread-1 (]: On test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b: Close
+[0m14:52:01.747937 [info ] [Thread-1 (]: 5 of 5 PASS unique_filmes_SHOW_ID .............................................. [[32mPASS[0m in 2.14s]
+[0m14:52:01.750957 [debug] [Thread-1 (]: Finished running node test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b
+[0m14:52:01.753954 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:52:01.754957 [debug] [MainThread]: Connection 'list_NETFLIX_BRONZE' was properly closed.
+[0m14:52:01.754957 [debug] [MainThread]: Connection 'test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b' was properly closed.
+[0m14:52:01.755951 [info ] [MainThread]: 
+[0m14:52:01.757951 [info ] [MainThread]: Finished running 5 data tests in 0 hours 0 minutes and 16.29 seconds (16.29s).
+[0m14:52:01.763476 [debug] [MainThread]: Command end result
+[0m14:52:01.837700 [info ] [MainThread]: 
+[0m14:52:01.839232 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m14:52:01.840237 [info ] [MainThread]: 
+[0m14:52:01.842226 [error] [MainThread]: [31mFailure in test accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023 (models\silver\silver.yml)[0m
+[0m14:52:01.844225 [error] [MainThread]:   Got 71 results, configured to fail if != 0
+[0m14:52:01.845242 [info ] [MainThread]: 
+[0m14:52:01.846240 [info ] [MainThread]:   compiled code at target\compiled\netflix_project\models\silver\silver.yml\accepted_values_filmes_9175c6f5ba48a5d5f3a6bfa76f95fcd6.sql
+[0m14:52:01.848788 [info ] [MainThread]: 
+[0m14:52:01.850781 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=1 SKIP=0 TOTAL=5
+[0m14:52:01.853787 [debug] [MainThread]: Command `dbt test` failed at 14:52:01.853787 after 18.64 seconds
+[0m14:52:01.855778 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F697455450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F69A269510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F699FB2CB0>]}
+[0m14:52:01.856778 [debug] [MainThread]: Flushing usage events
+[0m14:56:33.869008 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219958B54B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219988876D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021998886BC0>]}
+
+
+============================== 14:56:33.876036 | a889f0d4-bd33-40b1-a9b8-f3b017c1a798 ==============================
+[0m14:56:33.876036 [info ] [MainThread]: Running with dbt=1.8.7
+[0m14:56:33.877035 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\brend\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Users\\brend\\Downloads\\impacta\\DBT\\netflix_project\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt test', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m14:56:35.521205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a889f0d4-bd33-40b1-a9b8-f3b017c1a798', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021996177370>]}
+[0m14:56:35.621953 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a889f0d4-bd33-40b1-a9b8-f3b017c1a798', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021996714E50>]}
+[0m14:56:35.624960 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m14:56:35.638977 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m14:56:35.949914 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m14:56:35.950917 [debug] [MainThread]: Partial parsing: added file: netflix_project://tests\teststest_release_year_is_valid.sql
+[0m14:56:36.298749 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a889f0d4-bd33-40b1-a9b8-f3b017c1a798', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219A9B31450>]}
+[0m14:56:36.657131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a889f0d4-bd33-40b1-a9b8-f3b017c1a798', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219A9A356C0>]}
+[0m14:56:36.658645 [info ] [MainThread]: Found 9 models, 6 data tests, 460 macros
+[0m14:56:36.659661 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a889f0d4-bd33-40b1-a9b8-f3b017c1a798', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219A9A5FB80>]}
+[0m14:56:36.662672 [info ] [MainThread]: 
+[0m14:56:36.663673 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m14:56:36.673732 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NETFLIX_GOLD'
+[0m14:56:36.706033 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX_GOLD"
+[0m14:56:36.708042 [debug] [ThreadPool]: On list_NETFLIX_GOLD: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX_GOLD"} */
+show objects in NETFLIX.GOLD limit 10000
+[0m14:56:36.709037 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:56:38.110580 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.401 seconds
+[0m14:56:38.113590 [debug] [ThreadPool]: On list_NETFLIX_GOLD: Close
+[0m14:56:38.403866 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_NETFLIX_GOLD, now list_NETFLIX_SILVER)
+[0m14:56:38.410411 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX_SILVER"
+[0m14:56:38.411420 [debug] [ThreadPool]: On list_NETFLIX_SILVER: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX_SILVER"} */
+show objects in NETFLIX.SILVER limit 10000
+[0m14:56:38.412434 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:56:39.705749 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.294 seconds
+[0m14:56:39.712309 [debug] [ThreadPool]: On list_NETFLIX_SILVER: Close
+[0m14:56:40.014350 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_NETFLIX_SILVER, now list_NETFLIX_BRONZE)
+[0m14:56:40.022897 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX_BRONZE"
+[0m14:56:40.024903 [debug] [ThreadPool]: On list_NETFLIX_BRONZE: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX_BRONZE"} */
+show objects in NETFLIX.BRONZE limit 10000
+[0m14:56:40.025904 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:56:41.315910 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.289 seconds
+[0m14:56:41.320443 [debug] [ThreadPool]: On list_NETFLIX_BRONZE: Close
+[0m14:56:41.622422 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a889f0d4-bd33-40b1-a9b8-f3b017c1a798', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219961D5690>]}
+[0m14:56:41.624431 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:56:41.625428 [info ] [MainThread]: 
+[0m14:56:41.630489 [debug] [Thread-1 (]: Began running node test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5
+[0m14:56:41.633024 [info ] [Thread-1 (]: 1 of 6 START test accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023  [RUN]
+[0m14:56:41.634539 [debug] [Thread-1 (]: Acquiring new snowflake connection 'test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5'
+[0m14:56:41.636624 [debug] [Thread-1 (]: Began compiling node test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5
+[0m14:56:41.676873 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5"
+[0m14:56:41.678838 [debug] [Thread-1 (]: Began executing node test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5
+[0m14:56:41.717502 [debug] [Thread-1 (]: Writing runtime sql for node "test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5"
+[0m14:56:41.721016 [debug] [Thread-1 (]: Using snowflake connection "test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5"
+[0m14:56:41.722021 [debug] [Thread-1 (]: On test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        RELEASE_YEAR as value_field,
+        count(*) as n_records
+
+    from NETFLIX.SILVER.filmes
+    group by RELEASE_YEAR
+
+)
+
+select *
+from all_values
+where value_field not in (
+    '2019','2020','2021','2022','2023'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m14:56:41.723020 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:56:43.060926 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.337 seconds
+[0m14:56:43.089064 [debug] [Thread-1 (]: On test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5: Close
+[0m14:56:43.393370 [error] [Thread-1 (]: 1 of 6 FAIL 71 accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023  [[31mFAIL 71[0m in 1.76s]
+[0m14:56:43.395380 [debug] [Thread-1 (]: Finished running node test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5
+[0m14:56:43.397363 [debug] [Thread-1 (]: Began running node test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109
+[0m14:56:43.397363 [info ] [Thread-1 (]: 2 of 6 START test not_null_filmes_RELEASE_YEAR ................................. [RUN]
+[0m14:56:43.399908 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5, now test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109)
+[0m14:56:43.401906 [debug] [Thread-1 (]: Began compiling node test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109
+[0m14:56:43.424659 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109"
+[0m14:56:43.427659 [debug] [Thread-1 (]: Began executing node test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109
+[0m14:56:43.435234 [debug] [Thread-1 (]: Writing runtime sql for node "test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109"
+[0m14:56:43.439214 [debug] [Thread-1 (]: Using snowflake connection "test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109"
+[0m14:56:43.440750 [debug] [Thread-1 (]: On test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select RELEASE_YEAR
+from NETFLIX.SILVER.filmes
+where RELEASE_YEAR is null
+
+
+
+      
+    ) dbt_internal_test
+[0m14:56:43.442753 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:56:44.702049 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.260 seconds
+[0m14:56:44.706050 [debug] [Thread-1 (]: On test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109: Close
+[0m14:56:45.005032 [info ] [Thread-1 (]: 2 of 6 PASS not_null_filmes_RELEASE_YEAR ....................................... [[32mPASS[0m in 1.60s]
+[0m14:56:45.008037 [debug] [Thread-1 (]: Finished running node test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109
+[0m14:56:45.010579 [debug] [Thread-1 (]: Began running node test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072
+[0m14:56:45.012611 [info ] [Thread-1 (]: 3 of 6 START test not_null_filmes_SHOW_ID ...................................... [RUN]
+[0m14:56:45.014610 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109, now test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072)
+[0m14:56:45.015609 [debug] [Thread-1 (]: Began compiling node test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072
+[0m14:56:45.028153 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072"
+[0m14:56:45.031687 [debug] [Thread-1 (]: Began executing node test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072
+[0m14:56:45.037706 [debug] [Thread-1 (]: Writing runtime sql for node "test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072"
+[0m14:56:45.041246 [debug] [Thread-1 (]: Using snowflake connection "test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072"
+[0m14:56:45.042268 [debug] [Thread-1 (]: On test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select SHOW_ID
+from NETFLIX.SILVER.filmes
+where SHOW_ID is null
+
+
+
+      
+    ) dbt_internal_test
+[0m14:56:45.043265 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:56:46.153066 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.109 seconds
+[0m14:56:46.156065 [debug] [Thread-1 (]: On test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072: Close
+[0m14:56:46.447795 [info ] [Thread-1 (]: 3 of 6 PASS not_null_filmes_SHOW_ID ............................................ [[32mPASS[0m in 1.43s]
+[0m14:56:46.450354 [debug] [Thread-1 (]: Finished running node test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072
+[0m14:56:46.452352 [debug] [Thread-1 (]: Began running node test.netflix_project.not_null_filmes_TITLE.2d61ba99ee
+[0m14:56:46.454352 [info ] [Thread-1 (]: 4 of 6 START test not_null_filmes_TITLE ........................................ [RUN]
+[0m14:56:46.456354 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072, now test.netflix_project.not_null_filmes_TITLE.2d61ba99ee)
+[0m14:56:46.458354 [debug] [Thread-1 (]: Began compiling node test.netflix_project.not_null_filmes_TITLE.2d61ba99ee
+[0m14:56:46.473984 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.not_null_filmes_TITLE.2d61ba99ee"
+[0m14:56:46.476999 [debug] [Thread-1 (]: Began executing node test.netflix_project.not_null_filmes_TITLE.2d61ba99ee
+[0m14:56:46.485122 [debug] [Thread-1 (]: Writing runtime sql for node "test.netflix_project.not_null_filmes_TITLE.2d61ba99ee"
+[0m14:56:46.489630 [debug] [Thread-1 (]: Using snowflake connection "test.netflix_project.not_null_filmes_TITLE.2d61ba99ee"
+[0m14:56:46.490651 [debug] [Thread-1 (]: On test.netflix_project.not_null_filmes_TITLE.2d61ba99ee: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "test.netflix_project.not_null_filmes_TITLE.2d61ba99ee"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select TITLE
+from NETFLIX.SILVER.filmes
+where TITLE is null
+
+
+
+      
+    ) dbt_internal_test
+[0m14:56:46.492654 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:56:47.658978 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.166 seconds
+[0m14:56:47.662987 [debug] [Thread-1 (]: On test.netflix_project.not_null_filmes_TITLE.2d61ba99ee: Close
+[0m14:56:47.946749 [info ] [Thread-1 (]: 4 of 6 PASS not_null_filmes_TITLE .............................................. [[32mPASS[0m in 1.49s]
+[0m14:56:47.947757 [debug] [Thread-1 (]: Finished running node test.netflix_project.not_null_filmes_TITLE.2d61ba99ee
+[0m14:56:47.950287 [debug] [Thread-1 (]: Began running node test.netflix_project.teststest_release_year_is_valid
+[0m14:56:47.951290 [info ] [Thread-1 (]: 5 of 6 START test teststest_release_year_is_valid .............................. [RUN]
+[0m14:56:47.952286 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.not_null_filmes_TITLE.2d61ba99ee, now test.netflix_project.teststest_release_year_is_valid)
+[0m14:56:47.954292 [debug] [Thread-1 (]: Began compiling node test.netflix_project.teststest_release_year_is_valid
+[0m14:56:47.967863 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.teststest_release_year_is_valid"
+[0m14:56:47.970397 [debug] [Thread-1 (]: Began executing node test.netflix_project.teststest_release_year_is_valid
+[0m14:56:47.978946 [debug] [Thread-1 (]: Writing runtime sql for node "test.netflix_project.teststest_release_year_is_valid"
+[0m14:56:47.982497 [debug] [Thread-1 (]: Using snowflake connection "test.netflix_project.teststest_release_year_is_valid"
+[0m14:56:47.983495 [debug] [Thread-1 (]: On test.netflix_project.teststest_release_year_is_valid: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "test.netflix_project.teststest_release_year_is_valid"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      SELECT *
+FROM NETFLIX.BRONZE.netflix_titles
+WHERE release_year < 1950
+      
+    ) dbt_internal_test
+[0m14:56:47.984499 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:56:49.904224 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.920 seconds
+[0m14:56:49.910761 [debug] [Thread-1 (]: On test.netflix_project.teststest_release_year_is_valid: Close
+[0m14:56:50.201219 [error] [Thread-1 (]: 5 of 6 FAIL 16 teststest_release_year_is_valid ................................. [[31mFAIL 16[0m in 2.25s]
+[0m14:56:50.203226 [debug] [Thread-1 (]: Finished running node test.netflix_project.teststest_release_year_is_valid
+[0m14:56:50.205217 [debug] [Thread-1 (]: Began running node test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b
+[0m14:56:50.206215 [info ] [Thread-1 (]: 6 of 6 START test unique_filmes_SHOW_ID ........................................ [RUN]
+[0m14:56:50.207212 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.teststest_release_year_is_valid, now test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b)
+[0m14:56:50.209225 [debug] [Thread-1 (]: Began compiling node test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b
+[0m14:56:50.223424 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b"
+[0m14:56:50.226427 [debug] [Thread-1 (]: Began executing node test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b
+[0m14:56:50.235033 [debug] [Thread-1 (]: Writing runtime sql for node "test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b"
+[0m14:56:50.239554 [debug] [Thread-1 (]: Using snowflake connection "test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b"
+[0m14:56:50.241624 [debug] [Thread-1 (]: On test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "node_id": "test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    SHOW_ID as unique_field,
+    count(*) as n_records
+
+from NETFLIX.SILVER.filmes
+where SHOW_ID is not null
+group by SHOW_ID
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m14:56:50.243579 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:56:51.385635 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.142 seconds
+[0m14:56:51.390160 [debug] [Thread-1 (]: On test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b: Close
+[0m14:56:51.692527 [info ] [Thread-1 (]: 6 of 6 PASS unique_filmes_SHOW_ID .............................................. [[32mPASS[0m in 1.48s]
+[0m14:56:51.696529 [debug] [Thread-1 (]: Finished running node test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b
+[0m14:56:51.700051 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:56:51.702050 [debug] [MainThread]: Connection 'list_NETFLIX_BRONZE' was properly closed.
+[0m14:56:51.703046 [debug] [MainThread]: Connection 'test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b' was properly closed.
+[0m14:56:51.704052 [info ] [MainThread]: 
+[0m14:56:51.706051 [info ] [MainThread]: Finished running 6 data tests in 0 hours 0 minutes and 15.04 seconds (15.04s).
+[0m14:56:51.709065 [debug] [MainThread]: Command end result
+[0m14:56:51.785250 [info ] [MainThread]: 
+[0m14:56:51.786250 [info ] [MainThread]: [31mCompleted with 2 errors and 0 warnings:[0m
+[0m14:56:51.787260 [info ] [MainThread]: 
+[0m14:56:51.789253 [error] [MainThread]: [31mFailure in test accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023 (models\silver\silver.yml)[0m
+[0m14:56:51.790524 [error] [MainThread]:   Got 71 results, configured to fail if != 0
+[0m14:56:51.792521 [info ] [MainThread]: 
+[0m14:56:51.793521 [info ] [MainThread]:   compiled code at target\compiled\netflix_project\models\silver\silver.yml\accepted_values_filmes_9175c6f5ba48a5d5f3a6bfa76f95fcd6.sql
+[0m14:56:51.795519 [info ] [MainThread]: 
+[0m14:56:51.796516 [error] [MainThread]: [31mFailure in test teststest_release_year_is_valid (tests\teststest_release_year_is_valid.sql)[0m
+[0m14:56:51.797520 [error] [MainThread]:   Got 16 results, configured to fail if != 0
+[0m14:56:51.800060 [info ] [MainThread]: 
+[0m14:56:51.801057 [info ] [MainThread]:   compiled code at target\compiled\netflix_project\tests\teststest_release_year_is_valid.sql
+[0m14:56:51.803071 [info ] [MainThread]: 
+[0m14:56:51.804069 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=2 SKIP=0 TOTAL=6
+[0m14:56:51.806072 [debug] [MainThread]: Command `dbt test` failed at 14:56:51.806072 after 18.16 seconds
+[0m14:56:51.807072 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219958B54B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219962E16C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021998413F10>]}
+[0m14:56:51.808069 [debug] [MainThread]: Flushing usage events
+[0m15:11:57.068547 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A11B8F5420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A11E0768C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A11E076650>]}
+
+
+============================== 15:11:57.075912 | ad9ff53f-8984-4387-a4bf-614439b10f93 ==============================
+[0m15:11:57.075912 [info ] [MainThread]: Running with dbt=1.8.7
+[0m15:11:57.076921 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\brend\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'C:\\Users\\brend\\Downloads\\impacta\\DBT\\netflix_project\\logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt docs generate', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:11:58.822303 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ad9ff53f-8984-4387-a4bf-614439b10f93', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A11E0B55A0>]}
+[0m15:11:58.924306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ad9ff53f-8984-4387-a4bf-614439b10f93', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A11D62F7F0>]}
+[0m15:11:58.927313 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m15:11:58.944901 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m15:11:59.378728 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m15:11:59.379736 [debug] [MainThread]: Partial parsing: updated file: netflix_project://tests\teststest_release_year_is_valid.sql
+[0m15:11:59.748620 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ad9ff53f-8984-4387-a4bf-614439b10f93', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A12F303850>]}
+[0m15:11:59.791349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ad9ff53f-8984-4387-a4bf-614439b10f93', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A12F303BB0>]}
+[0m15:11:59.792346 [info ] [MainThread]: Found 9 models, 6 data tests, 460 macros
+[0m15:11:59.793864 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ad9ff53f-8984-4387-a4bf-614439b10f93', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A12F303AF0>]}
+[0m15:11:59.796872 [info ] [MainThread]: 
+[0m15:11:59.798879 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m15:11:59.811978 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NETFLIX_GOLD'
+[0m15:11:59.843598 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX_GOLD"
+[0m15:11:59.844623 [debug] [ThreadPool]: On list_NETFLIX_GOLD: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX_GOLD"} */
+show objects in NETFLIX.GOLD limit 10000
+[0m15:11:59.844623 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:12:01.548644 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.703 seconds
+[0m15:12:01.554166 [debug] [ThreadPool]: On list_NETFLIX_GOLD: Close
+[0m15:12:01.869930 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_NETFLIX_GOLD, now list_NETFLIX_BRONZE)
+[0m15:12:01.876509 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX_BRONZE"
+[0m15:12:01.877511 [debug] [ThreadPool]: On list_NETFLIX_BRONZE: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX_BRONZE"} */
+show objects in NETFLIX.BRONZE limit 10000
+[0m15:12:01.878502 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:12:03.136949 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.258 seconds
+[0m15:12:03.141541 [debug] [ThreadPool]: On list_NETFLIX_BRONZE: Close
+[0m15:12:03.434465 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_NETFLIX_BRONZE, now list_NETFLIX_SILVER)
+[0m15:12:03.443994 [debug] [ThreadPool]: Using snowflake connection "list_NETFLIX_SILVER"
+[0m15:12:03.446015 [debug] [ThreadPool]: On list_NETFLIX_SILVER: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "list_NETFLIX_SILVER"} */
+show objects in NETFLIX.SILVER limit 10000
+[0m15:12:03.448017 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:12:04.677954 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.230 seconds
+[0m15:12:04.684447 [debug] [ThreadPool]: On list_NETFLIX_SILVER: Close
+[0m15:12:04.991577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ad9ff53f-8984-4387-a4bf-614439b10f93', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A12EEDDE40>]}
+[0m15:12:04.993569 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:12:04.996145 [info ] [MainThread]: 
+[0m15:12:05.002133 [debug] [Thread-1 (]: Began running node model.netflix_project.netflix_titles
+[0m15:12:05.005671 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.netflix_project.netflix_titles'
+[0m15:12:05.007703 [debug] [Thread-1 (]: Began compiling node model.netflix_project.netflix_titles
+[0m15:12:05.029790 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.netflix_titles"
+[0m15:12:05.031796 [debug] [Thread-1 (]: Began executing node model.netflix_project.netflix_titles
+[0m15:12:05.034309 [debug] [Thread-1 (]: Finished running node model.netflix_project.netflix_titles
+[0m15:12:05.037339 [debug] [Thread-1 (]: Began running node model.netflix_project.atores
+[0m15:12:05.038340 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.netflix_titles, now model.netflix_project.atores)
+[0m15:12:05.039341 [debug] [Thread-1 (]: Began compiling node model.netflix_project.atores
+[0m15:12:05.046884 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.atores"
+[0m15:12:05.048883 [debug] [Thread-1 (]: Began executing node model.netflix_project.atores
+[0m15:12:05.050979 [debug] [Thread-1 (]: Finished running node model.netflix_project.atores
+[0m15:12:05.052555 [debug] [Thread-1 (]: Began running node model.netflix_project.diretores
+[0m15:12:05.054069 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.atores, now model.netflix_project.diretores)
+[0m15:12:05.055083 [debug] [Thread-1 (]: Began compiling node model.netflix_project.diretores
+[0m15:12:05.062096 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.diretores"
+[0m15:12:05.065559 [debug] [Thread-1 (]: Began executing node model.netflix_project.diretores
+[0m15:12:05.067240 [debug] [Thread-1 (]: Finished running node model.netflix_project.diretores
+[0m15:12:05.068376 [debug] [Thread-1 (]: Began running node model.netflix_project.filmes
+[0m15:12:05.070041 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.diretores, now model.netflix_project.filmes)
+[0m15:12:05.070550 [debug] [Thread-1 (]: Began compiling node model.netflix_project.filmes
+[0m15:12:05.075924 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.filmes"
+[0m15:12:05.077939 [debug] [Thread-1 (]: Began executing node model.netflix_project.filmes
+[0m15:12:05.078936 [debug] [Thread-1 (]: Finished running node model.netflix_project.filmes
+[0m15:12:05.079938 [debug] [Thread-1 (]: Began running node model.netflix_project.paises
+[0m15:12:05.080937 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.filmes, now model.netflix_project.paises)
+[0m15:12:05.081936 [debug] [Thread-1 (]: Began compiling node model.netflix_project.paises
+[0m15:12:05.086464 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.paises"
+[0m15:12:05.088474 [debug] [Thread-1 (]: Began executing node model.netflix_project.paises
+[0m15:12:05.089476 [debug] [Thread-1 (]: Finished running node model.netflix_project.paises
+[0m15:12:05.091477 [debug] [Thread-1 (]: Began running node model.netflix_project.tipos
+[0m15:12:05.092478 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.paises, now model.netflix_project.tipos)
+[0m15:12:05.094503 [debug] [Thread-1 (]: Began compiling node model.netflix_project.tipos
+[0m15:12:05.104757 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.tipos"
+[0m15:12:05.108759 [debug] [Thread-1 (]: Began executing node model.netflix_project.tipos
+[0m15:12:05.111770 [debug] [Thread-1 (]: Finished running node model.netflix_project.tipos
+[0m15:12:05.113761 [debug] [Thread-1 (]: Began running node test.netflix_project.teststest_release_year_is_valid
+[0m15:12:05.115275 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.tipos, now test.netflix_project.teststest_release_year_is_valid)
+[0m15:12:05.116281 [debug] [Thread-1 (]: Began compiling node test.netflix_project.teststest_release_year_is_valid
+[0m15:12:05.123790 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.teststest_release_year_is_valid"
+[0m15:12:05.125801 [debug] [Thread-1 (]: Began executing node test.netflix_project.teststest_release_year_is_valid
+[0m15:12:05.127807 [debug] [Thread-1 (]: Finished running node test.netflix_project.teststest_release_year_is_valid
+[0m15:12:05.129807 [debug] [Thread-1 (]: Began running node test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5
+[0m15:12:05.130812 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.teststest_release_year_is_valid, now test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5)
+[0m15:12:05.131807 [debug] [Thread-1 (]: Began compiling node test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5
+[0m15:12:05.154353 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5"
+[0m15:12:05.156366 [debug] [Thread-1 (]: Began executing node test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5
+[0m15:12:05.158368 [debug] [Thread-1 (]: Finished running node test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5
+[0m15:12:05.159360 [debug] [Thread-1 (]: Began running node test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109
+[0m15:12:05.160368 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.accepted_values_filmes_RELEASE_YEAR__2019__2020__2021__2022__2023.cecc9c28d5, now test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109)
+[0m15:12:05.161369 [debug] [Thread-1 (]: Began compiling node test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109
+[0m15:12:05.179060 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109"
+[0m15:12:05.181058 [debug] [Thread-1 (]: Began executing node test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109
+[0m15:12:05.182062 [debug] [Thread-1 (]: Finished running node test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109
+[0m15:12:05.183568 [debug] [Thread-1 (]: Began running node test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072
+[0m15:12:05.184575 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.not_null_filmes_RELEASE_YEAR.71a78f2109, now test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072)
+[0m15:12:05.185576 [debug] [Thread-1 (]: Began compiling node test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072
+[0m15:12:05.194096 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072"
+[0m15:12:05.196112 [debug] [Thread-1 (]: Began executing node test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072
+[0m15:12:05.198125 [debug] [Thread-1 (]: Finished running node test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072
+[0m15:12:05.199119 [debug] [Thread-1 (]: Began running node test.netflix_project.not_null_filmes_TITLE.2d61ba99ee
+[0m15:12:05.200119 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.not_null_filmes_SHOW_ID.2bf31f2072, now test.netflix_project.not_null_filmes_TITLE.2d61ba99ee)
+[0m15:12:05.201123 [debug] [Thread-1 (]: Began compiling node test.netflix_project.not_null_filmes_TITLE.2d61ba99ee
+[0m15:12:05.211632 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.not_null_filmes_TITLE.2d61ba99ee"
+[0m15:12:05.215157 [debug] [Thread-1 (]: Began executing node test.netflix_project.not_null_filmes_TITLE.2d61ba99ee
+[0m15:12:05.219170 [debug] [Thread-1 (]: Finished running node test.netflix_project.not_null_filmes_TITLE.2d61ba99ee
+[0m15:12:05.222173 [debug] [Thread-1 (]: Began running node test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b
+[0m15:12:05.223686 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.not_null_filmes_TITLE.2d61ba99ee, now test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b)
+[0m15:12:05.225706 [debug] [Thread-1 (]: Began compiling node test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b
+[0m15:12:05.236238 [debug] [Thread-1 (]: Writing injected SQL for node "test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b"
+[0m15:12:05.238251 [debug] [Thread-1 (]: Began executing node test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b
+[0m15:12:05.240249 [debug] [Thread-1 (]: Finished running node test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b
+[0m15:12:05.241250 [debug] [Thread-1 (]: Began running node model.netflix_project.CAMPANHA_DESENHOS_TERROR
+[0m15:12:05.242244 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.netflix_project.unique_filmes_SHOW_ID.b67eaa2c5b, now model.netflix_project.CAMPANHA_DESENHOS_TERROR)
+[0m15:12:05.243749 [debug] [Thread-1 (]: Began compiling node model.netflix_project.CAMPANHA_DESENHOS_TERROR
+[0m15:12:05.249754 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.CAMPANHA_DESENHOS_TERROR"
+[0m15:12:05.251755 [debug] [Thread-1 (]: Began executing node model.netflix_project.CAMPANHA_DESENHOS_TERROR
+[0m15:12:05.253828 [debug] [Thread-1 (]: Finished running node model.netflix_project.CAMPANHA_DESENHOS_TERROR
+[0m15:12:05.254835 [debug] [Thread-1 (]: Began running node model.netflix_project.CAMPANHA_FILMES_TERROR
+[0m15:12:05.255840 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.CAMPANHA_DESENHOS_TERROR, now model.netflix_project.CAMPANHA_FILMES_TERROR)
+[0m15:12:05.256853 [debug] [Thread-1 (]: Began compiling node model.netflix_project.CAMPANHA_FILMES_TERROR
+[0m15:12:05.265359 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.CAMPANHA_FILMES_TERROR"
+[0m15:12:05.267358 [debug] [Thread-1 (]: Began executing node model.netflix_project.CAMPANHA_FILMES_TERROR
+[0m15:12:05.268364 [debug] [Thread-1 (]: Finished running node model.netflix_project.CAMPANHA_FILMES_TERROR
+[0m15:12:05.269365 [debug] [Thread-1 (]: Began running node model.netflix_project.CAMPANHA_SERIES_TERROR
+[0m15:12:05.270365 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.netflix_project.CAMPANHA_FILMES_TERROR, now model.netflix_project.CAMPANHA_SERIES_TERROR)
+[0m15:12:05.271364 [debug] [Thread-1 (]: Began compiling node model.netflix_project.CAMPANHA_SERIES_TERROR
+[0m15:12:05.278884 [debug] [Thread-1 (]: Writing injected SQL for node "model.netflix_project.CAMPANHA_SERIES_TERROR"
+[0m15:12:05.280889 [debug] [Thread-1 (]: Began executing node model.netflix_project.CAMPANHA_SERIES_TERROR
+[0m15:12:05.282890 [debug] [Thread-1 (]: Finished running node model.netflix_project.CAMPANHA_SERIES_TERROR
+[0m15:12:05.283884 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:12:05.285244 [debug] [MainThread]: Connection 'list_NETFLIX_SILVER' was properly closed.
+[0m15:12:05.286247 [debug] [MainThread]: Connection 'model.netflix_project.CAMPANHA_SERIES_TERROR' was properly closed.
+[0m15:12:05.291252 [debug] [MainThread]: Command end result
+[0m15:12:05.935419 [debug] [MainThread]: Acquiring new snowflake connection 'generate_catalog'
+[0m15:12:05.936418 [info ] [MainThread]: Building catalog
+[0m15:12:05.957464 [debug] [ThreadPool]: Acquiring new snowflake connection 'NETFLIX.information_schema'
+[0m15:12:05.988207 [debug] [ThreadPool]: Using snowflake connection "NETFLIX.information_schema"
+[0m15:12:05.990213 [debug] [ThreadPool]: On NETFLIX.information_schema: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "netflix_project", "target_name": "dev", "connection_name": "NETFLIX.information_schema"} */
+with tables as (
+            select
+        table_catalog as "table_database",
+        table_schema as "table_schema",
+        table_name as "table_name",
+        case
+            when is_dynamic = 'YES' and table_type = 'BASE TABLE' THEN 'DYNAMIC TABLE'
+            else table_type
+        end as "table_type",
+        comment as "table_comment",
+
+        -- note: this is the _role_ that owns the table
+        table_owner as "table_owner",
+
+        'Clustering Key' as "stats:clustering_key:label",
+        clustering_key as "stats:clustering_key:value",
+        'The key used to cluster this table' as "stats:clustering_key:description",
+        (clustering_key is not null) as "stats:clustering_key:include",
+
+        'Row Count' as "stats:row_count:label",
+        row_count as "stats:row_count:value",
+        'An approximate count of rows in this table' as "stats:row_count:description",
+        (row_count is not null) as "stats:row_count:include",
+
+        'Approximate Size' as "stats:bytes:label",
+        bytes as "stats:bytes:value",
+        'Approximate size of the table as reported by Snowflake' as "stats:bytes:description",
+        (bytes is not null) as "stats:bytes:include",
+
+        'Last Modified' as "stats:last_modified:label",
+        to_varchar(convert_timezone('UTC', last_altered), 'yyyy-mm-dd HH24:MI'||'UTC') as "stats:last_modified:value",
+        'The timestamp for last update/change' as "stats:last_modified:description",
+        (last_altered is not null and table_type='BASE TABLE') as "stats:last_modified:include"
+    from NETFLIX.INFORMATION_SCHEMA.tables
+            where (
+                (
+                    
+    "table_schema" ilike 'SILVER' and upper("table_schema") = upper('SILVER')
+
+                    and 
+    "table_name" ilike 'filmes' and upper("table_name") = upper('filmes')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'SILVER' and upper("table_schema") = upper('SILVER')
+
+                    and 
+    "table_name" ilike 'diretores' and upper("table_name") = upper('diretores')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'SILVER' and upper("table_schema") = upper('SILVER')
+
+                    and 
+    "table_name" ilike 'tipos' and upper("table_name") = upper('tipos')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'GOLD' and upper("table_schema") = upper('GOLD')
+
+                    and 
+    "table_name" ilike 'CAMPANHA_DESENHOS_TERROR' and upper("table_name") = upper('CAMPANHA_DESENHOS_TERROR')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'SILVER' and upper("table_schema") = upper('SILVER')
+
+                    and 
+    "table_name" ilike 'atores' and upper("table_name") = upper('atores')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'BRONZE' and upper("table_schema") = upper('BRONZE')
+
+                    and 
+    "table_name" ilike 'netflix_titles' and upper("table_name") = upper('netflix_titles')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'GOLD' and upper("table_schema") = upper('GOLD')
+
+                    and 
+    "table_name" ilike 'CAMPANHA_FILMES_TERROR' and upper("table_name") = upper('CAMPANHA_FILMES_TERROR')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'GOLD' and upper("table_schema") = upper('GOLD')
+
+                    and 
+    "table_name" ilike 'CAMPANHA_SERIES_TERROR' and upper("table_name") = upper('CAMPANHA_SERIES_TERROR')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'SILVER' and upper("table_schema") = upper('SILVER')
+
+                    and 
+    "table_name" ilike 'paises' and upper("table_name") = upper('paises')
+
+                )
+            )
+        ),
+        columns as (
+            select
+        table_catalog as "table_database",
+        table_schema as "table_schema",
+        table_name as "table_name",
+
+        column_name as "column_name",
+        ordinal_position as "column_index",
+        data_type as "column_type",
+        comment as "column_comment"
+    from NETFLIX.INFORMATION_SCHEMA.columns
+            where (
+                (
+                    
+    "table_schema" ilike 'SILVER' and upper("table_schema") = upper('SILVER')
+
+                    and 
+    "table_name" ilike 'filmes' and upper("table_name") = upper('filmes')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'SILVER' and upper("table_schema") = upper('SILVER')
+
+                    and 
+    "table_name" ilike 'diretores' and upper("table_name") = upper('diretores')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'SILVER' and upper("table_schema") = upper('SILVER')
+
+                    and 
+    "table_name" ilike 'tipos' and upper("table_name") = upper('tipos')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'GOLD' and upper("table_schema") = upper('GOLD')
+
+                    and 
+    "table_name" ilike 'CAMPANHA_DESENHOS_TERROR' and upper("table_name") = upper('CAMPANHA_DESENHOS_TERROR')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'SILVER' and upper("table_schema") = upper('SILVER')
+
+                    and 
+    "table_name" ilike 'atores' and upper("table_name") = upper('atores')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'BRONZE' and upper("table_schema") = upper('BRONZE')
+
+                    and 
+    "table_name" ilike 'netflix_titles' and upper("table_name") = upper('netflix_titles')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'GOLD' and upper("table_schema") = upper('GOLD')
+
+                    and 
+    "table_name" ilike 'CAMPANHA_FILMES_TERROR' and upper("table_name") = upper('CAMPANHA_FILMES_TERROR')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'GOLD' and upper("table_schema") = upper('GOLD')
+
+                    and 
+    "table_name" ilike 'CAMPANHA_SERIES_TERROR' and upper("table_name") = upper('CAMPANHA_SERIES_TERROR')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'SILVER' and upper("table_schema") = upper('SILVER')
+
+                    and 
+    "table_name" ilike 'paises' and upper("table_name") = upper('paises')
+
+                )
+            )
+        )
+        select *
+    from tables
+    join columns using ("table_database", "table_schema", "table_name")
+    order by "column_index"
+[0m15:12:05.991223 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:12:12.940185 [debug] [ThreadPool]: SQL status: SUCCESS 66 in 6.949 seconds
+[0m15:12:12.984064 [debug] [ThreadPool]: On NETFLIX.information_schema: Close
+[0m15:12:13.368119 [info ] [MainThread]: Catalog written to C:\Users\brend\Downloads\impacta\DBT\netflix_project\target\catalog.json
+[0m15:12:13.371125 [debug] [MainThread]: Command `dbt docs generate` succeeded at 15:12:13.371125 after 16.53 seconds
+[0m15:12:13.372120 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m15:12:13.373120 [debug] [MainThread]: Connection 'NETFLIX.information_schema' was properly closed.
+[0m15:12:13.374129 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A11B8F5420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A12F0E8B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A11AC247F0>]}
+[0m15:12:13.375391 [debug] [MainThread]: Flushing usage events
+[0m15:12:27.887683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3D24B5420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3D5483A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3D5483100>]}
+
+
+============================== 15:12:27.897215 | 616d2cce-ed70-42e4-8763-d72a0727510a ==============================
+[0m15:12:27.897215 [info ] [MainThread]: Running with dbt=1.8.7
+[0m15:12:27.898800 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Users\\brend\\Downloads\\impacta\\DBT\\netflix_project\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\brend\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt docs serve', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:12:29.525499 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '616d2cce-ed70-42e4-8763-d72a0727510a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3D54829B0>]}
+[0m15:12:29.639768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '616d2cce-ed70-42e4-8763-d72a0727510a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3D535C610>]}
