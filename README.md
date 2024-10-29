@@ -2,7 +2,14 @@
 
 Este projeto utiliza o DBT (Data Build Tool) e o Snowflake para implementar governança de dados, qualidade e linhagem em uma base de dados da Netflix. Nosso objetivo é construir uma estrutura de dados organizada em camadas (bronze, silver e gold), com validações automatizadas e documentação interativa.
 
-📜 **Sumário**
+# **Grupo**
+- Ana Honoro | 2400878
+- Brenda Xavier | 2400385
+- Ewerton Mendonça | 2400357
+- Gabriella Viroli | 2401011
+
+
+📜 # **Sumário**
 
 🎯 Objetivo  
 ✅ Pré-requisitos  
@@ -78,7 +85,8 @@ Gold 🏆: Dados prontos para consumo analítico.
 1) Clone o Repositório:
 ``` bash
 git clone <https://github.com/brenda00/datamanagmentgovernance_impacta.git>
-cd dbt-netflix-project
+cd impacta
+cd DBT
 ```
 2) Configure o Ambiente Virtual:
 ``` bash
@@ -104,6 +112,12 @@ dbt debug
 ``` bash
 dbt run
 ```
+Com tudo correndo bem a visão deve ser como a imagem a seguir:  
+
+
+![image](https://github.com/user-attachments/assets/8c0b9539-7eea-4c2a-8c05-6bc586596a2a)
+
+
 
 3) Execute os Testes:  
 O projeto utiliza testes automáticos para verificar a qualidade dos dados:  
@@ -113,6 +127,11 @@ Testes Personalizados: Validam regras específicas, como o ano de lançamento v�
 ``` bash
 dbt test
 ```
+Com tudo correndo bem o seu retorno deve ser algo parecido com o da imagem a seguir, apontando o erro que foi um teste para verificar o apontamento de erros personalizados  
+
+
+![image](https://github.com/user-attachments/assets/01b3d17a-8753-4b30-b7a7-babc43bd0769)
+
 
 📘 # **Documentação e Linhagem**  
 Para gerar a documentação e visualizar a linhagem dos dados, siga os passos abaixo:  
@@ -128,4 +147,24 @@ dbt docs serve
 ```
 
 Acesse http://localhost:8080 para visualizar a documentação interativa, incluindo a linhagem de dados!
+Com tudo correndo bem, no terminal você tem essa visão  
+
+
+![image](https://github.com/user-attachments/assets/f06deaa8-a20c-4d4e-88a8-d99e93868f99)  
+
+A visão ao acessar o localhost  
+
+
+![image](https://github.com/user-attachments/assets/0509814f-f6a8-4a4f-984a-2aa192148dc1)  
+![image](https://github.com/user-attachments/assets/7620b6e4-56fb-41fd-a972-138340982d94)  
+
+Exemplo de visualização do caminho do dado para a campanha de filmes de terror 
+
+
+![image](https://github.com/user-attachments/assets/ad8f1080-7e68-4423-85c6-fa83327bfe5d)
+
+
+
+
+
 
